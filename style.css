@@ -1,85 +1,258 @@
-*{
+:root {
+    --page-background: #000000;
+    --pegboard-colour: #333333;
+    --text-colour: #ffffff;
+    --title-colour: #e6e6e6;
+    --paragraph-colour: #b3b3b3;
+    --content-width: 1000px;
+}
+
+/* general */
+
+* {
+    box-sizing: border-box;
     font-family: "Inter", sans-serif;
     font-style: normal;
-    color:white;
+    color: var(--text-colour);
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--page-background);
+    background-image: radial-gradient(
+        var(--pegboard-colour) 1px,
+        transparent 1px
+    );
+    background-size: 40px 40px;
+    overflow-x: hidden;
+}
+
+/* Content */
 
 main {
-    max-width: 900px;
+    max-width: var(--content-width);
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 70px 30px 100px;
 }
 
-body{
-    background-color:#000000;
-    background-image: radial-gradient(#333 1px, transparent 1px);
-    background-size: 40px 40px;
-}
-
-nav { /* Styling for the nav entirely, not each element */
-    background-color:rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    display: flex;
-    flex-wrap: wrap;
-    gap:3vw; /* Space between children elements */
-    padding: 10px 10px;
-    width: 100%;
-    max-width: 600px;
-    margin: 25px auto;
-    justify-content: center; /* Centers content inside nav, horizontal positioning */
-    align-items: center; /* Vertical positioning */
-    transition: 0.2s; /* introduces delay before changes are made */
-}
-
-nav a { /* Styling for individual nav elements */
-    color: #e6e6e6;
-    text-decoration: none;
-    flex: 1;
+.centered {
     text-align: center;
-    font-size:1rem;
 }
 
-nav a:hover { /* what happens when nav elements are hovered */
-    color:#ffff;
-    transform: scale(1.15); /*makes links bigger */
-}
+/* profile image*/
 
-.home-title{
-    color:#e6e6e6;
-    font-weight:900;
-    font-size: 1.75rem;
-}
-
-.home-text{
-    font-size:1.25rem;
-    color:#b3b3b3;
-    font-weight:800;
-}
-
-.profile-pic{
-    width: auto;
-    height: auto;
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.content-grid {
-    display: grid;
-    grid-template-columns: 0.5fr 1fr;
-    gap: 20px;
+/* intro */
+
+.home-title {
+    color: var(--title-colour);
+    font-weight: 800;
+    font-size: 4rem;
+    font-style: italic;
+    margin: 0 0 10px;
+    line-height: 1.1;
 }
 
-.content-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+.home-text {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 1.25rem;
+    color: var(--paragraph-colour);
+    font-weight: 500;
+    line-height: 1.6;
 }
 
-.content-box h1{
-    margin-bottom: 10px;
+/* sections */
+
+section {
+    margin-bottom: 70px;
 }
 
-.content-box p {
+.smaller-title {
+    color: var(--title-colour);
+    font-weight: 800;
+    font-size: 2rem;
+    margin-top: 60px;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.smaller-title span {
+    color: #555555;
+    font-family: monospace;
+    font-size: 0.8rem;
+    margin-right: 12px;
+    font-weight: 400;
+}
+
+.body-text {
+    max-width: 800px;
+    font-size: 1rem;
+    color: var(--paragraph-colour);
+    font-weight: 400;
+    line-height: 1.7;
     margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.hobbies-grid > div {
+    border: 1px solid #333;
+    padding: 25px;
+    background: rgba(20, 20, 20, 0.5);
+}
+
+.hobbies-grid h3 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+    color: var(--title-colour);
+}
+
+.hobbies-grid p {
+    margin: 0;
+    color: var(--paragraph-colour);
+    line-height: 1.5;
+}
+
+.learning-list {
+    max-width: 800px;
+    margin: 25px 0 0;
+    padding-left: 20px;
+}
+
+.learning-list li {
+    color: var(--paragraph-colour);
+    font-size: 1rem;
+    line-height: 1.8;
+    padding-left: 5px;
+}
+/* divider */
+
+hr {
+    border: none;
+    border-top: 2px solid var(--pegboard-colour);
+    width: 70%;
+    margin: 60px auto;
+}
+
+/* links */
+
+a {
+    color: var(--title-colour);
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    opacity: 0.75;
+}
+
+/* rotating side images */
+
+.side-left,
+.side-right {
+    position: fixed !important;
+    width: 200px !important;
+    max-width: none !important;
+    height: auto;
+    z-index: 1000;
+    pointer-events: none;
+    animation: spin 25s linear infinite;
+}
+
+.side-left {
+    left: -100px !important;
+    bottom: 30px !important;
+}
+
+.side-right {
+    right: -100px !important;
+    top: 10% !important;
+}
+
+/* rotation */
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* phone compatibility */
+
+@media (max-width: 700px) {
+
+    main {
+        padding: 40px 20px 70px;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .home-title {
+        font-size: 3rem;
+    }
+
+    .home-text {
+        font-size: 1.15rem;
+    }
+
+    .smaller-title {
+        font-size: 1.7rem;
+        margin-top: 45px;
+    }
+
+    .body-text {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
+    hr {
+        width: 90%;
+        margin: 45px auto;
+    }
+
+    .side-left,
+    .side-right {
+        width: 120px !important;
+    }
+
+    .side-left {
+        left: -70px !important;
+    }
+
+    .side-right {
+        right: -60px !important;
+    }
+
+    .hobbies-grid {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    } 
 }
