@@ -1,0 +1,85 @@
+*{
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    color:white;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+body{
+    background-color:#000000;
+    background-image: radial-gradient(#333 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+nav { /* Styling for the nav entirely, not each element */
+    background-color:rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:3vw; /* Space between children elements */
+    padding: 10px 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 25px auto;
+    justify-content: center; /* Centers content inside nav, horizontal positioning */
+    align-items: center; /* Vertical positioning */
+    transition: 0.2s; /* introduces delay before changes are made */
+}
+
+nav a { /* Styling for individual nav elements */
+    color: #e6e6e6;
+    text-decoration: none;
+    flex: 1;
+    text-align: center;
+    font-size:1rem;
+}
+
+nav a:hover { /* what happens when nav elements are hovered */
+    color:#ffff;
+    transform: scale(1.15); /*makes links bigger */
+}
+
+.home-title{
+    color:#e6e6e6;
+    font-weight:900;
+    font-size: 1.75rem;
+}
+
+.home-text{
+    font-size:1.25rem;
+    color:#b3b3b3;
+    font-weight:800;
+}
+
+.profile-pic{
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    gap: 20px;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.content-box h1{
+    margin-bottom: 10px;
+}
+
+.content-box p {
+    margin-top: 0;
+}
