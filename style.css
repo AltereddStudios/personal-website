@@ -190,6 +190,42 @@ a:hover {
     top: 10% !important;
 }
 
+#invertButton {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    padding: 10px 16px;
+    border: 1px solid #555555;
+    border-radius: 8px;
+
+    background: #111111;
+    color: #ffffff;
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    z-index: 2000;
+
+    transition: all 0.2s ease;
+}
+
+#invertButton:hover {
+    background: #222222;
+    border-color: #777777;
+    transform: translateY(-1px);
+}
+
+#invertButton:active {
+    transform: translateY(0);
+}
+
+.inverted {
+    filter: invert(1);
+}
+
 /* rotation */
 
 @keyframes spin {
